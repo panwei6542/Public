@@ -1,0 +1,21 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[gui]
+	wmstate = normal
+	geometry = 982x555+234+234 244 251
+[remote "github"]
+	url = git@github.com:yangqoor/Public.git
+	fetch = +refs/heads/*:refs/remotes/github/*
+[remote "gitee"]
+	url = git@gitee.com:yangqoor/Public.git
+	fetch = +refs/heads/*:refs/remotes/gitee/*
+[branch "master"]
+	remote = github
+	merge = refs/heads/master
+[credential]
+	helper = store
