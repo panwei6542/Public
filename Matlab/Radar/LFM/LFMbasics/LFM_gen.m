@@ -8,7 +8,7 @@ Fs = 2*B;Ts = 1/Fs;                 %采样频率及采样间隔
 N = T/Ts;
 t = linspace(-T/2,T/2,N);
 f0=10e6;                            %载波频率
-St = exp(j*pi*K*t.^2+j*2*pi*f0*t);            %生成线性调频信号
+St = exp(1j*pi*K*t.^2+1j*2*pi*f0*t);            %生成线性调频信号
 
 figure;
 subplot(211)
