@@ -121,6 +121,7 @@ end
 
 figure;
 mesh(r, y, ECHO);
+view(0, 90)
 xlim([9900 10100]);
 xlabel('距离向');
 ylabel('方位向');
