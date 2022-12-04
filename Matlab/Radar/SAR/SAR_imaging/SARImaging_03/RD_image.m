@@ -50,7 +50,7 @@ Target         =   [0 0 0];%;0,0,0;
 
 %%   Echo Generate Simulation   
 
-tr         =     (2*R_mid+((0:NumSam_Range-1)-fix(NumSam_Range/2))*drange)/c;           %距离向快时间
+tr         =     (2*R_mid+((0:NumSam_Range-1)-fix(NumSam_Range/2))*drange)/c;    %距离向快时间
 Data_Echo  =     zeros(NumSam_Azimuth,NumSam_Range);
 
 Hwaitbar=waitbar(0,'回波生成...');
