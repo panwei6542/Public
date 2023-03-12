@@ -103,7 +103,7 @@ Rawsignal_ifft=ifft(Rawsignal_shift,[],2);      %%%距离向IFFＴ，变换到二维时域
 figure;imagesc(abs(Rawsignal_ifft));        %%%显示二维时域图 
 
 %% 距离弯曲校正
-fa   =   (([0:NumSam_Azimuth-1]-fix(NumSam_Azimuth/2))/NumSam_Azimuth*PRF);  % 方位向频率
+ fa   =   (([0:NumSam_Azimuth-1]-fix(NumSam_Azimuth/2))/NumSam_Azimuth*PRF);  % 方位向频率
 fr   =   ([0:NumSam_Range-1]-fix(NumSam_Range/2))/NumSam_Range*Fs;           % 距离向频率
 faM  =   2*v/lamda;
 
