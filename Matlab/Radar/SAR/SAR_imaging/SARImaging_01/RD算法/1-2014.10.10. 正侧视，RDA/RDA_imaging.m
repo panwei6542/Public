@@ -93,7 +93,7 @@ ta_mtx = ta.'*ones(1,Nrg);  % 方位时间轴矩阵，大小：Naz*Nrg
 s_echo = zeros(Naz,Nrg);    % 用来存放生成的回波数据
 
 A0 = 1;                     % 目标回波幅度，都设置为1.
-for k = 1:1                 % 生成k个目标的原始回波数据
+for k = 1:3                 % 生成k个目标的原始回波数据
     R_n = sqrt( (x_range(k).*ones(Naz,Nrg)).^2 + (Vr.*ta_mtx-y_azimuth(k).*ones(Naz,Nrg)).^2 );% 目标k的瞬时斜距
     w_range = ((abs(tr_mtx-2.*R_n./c)) <= ((Tr/2).*ones(Naz,Nrg)));     % 距离向包络，即距离窗
     % =====================================================================    
