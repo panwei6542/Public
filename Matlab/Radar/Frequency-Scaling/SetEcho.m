@@ -19,7 +19,7 @@ echo=zeros(Na,Nr);
 ta2=ta'*ones(1,Nr);
 tau=ones(Na,1)*tr;
 
-MethodFlag=1;%MethodFlag采用直接解调，为1，共轭相乘
+MethodFlag=0;%MethodFlag采用直接解调，为1，共轭相乘
 
 for n = 1:1%TargetPara.TargetNum
     Rt=sqrt((Vr.*ta2-TargetPos(n,2).*ones(Na,Nr)).^2+(TargetPos(n,1).*ones(Na,Nr)).^2);
