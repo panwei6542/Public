@@ -3,7 +3,8 @@
 % 当SignalParaFlag=1时函数返回信号参数结构体；
 % SignalParaFlag=0时，无参数
 %%
-function [RangePara,AzimuthPara,RadarPara,TargetPara]=SetImagePara(SignalPara,ImageParaFlag)
+function [RangePara,AzimuthPara,RadarPara,TargetPara]=...
+    SetImagePara(SignalPara,ImageParaFlag)
 if ImageParaFlag  
     c=SignalPara.c;
     Tp= SignalPara.Tp;
