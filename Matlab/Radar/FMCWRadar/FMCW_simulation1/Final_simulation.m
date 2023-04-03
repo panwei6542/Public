@@ -26,7 +26,7 @@ tm = 25000*range2time(range_max,c);
 %The sweep bandwidth can be determined according to the range resolution and 
 %the sweep slope is calculated using both sweep bandwidth and sweep time
 range_res = 0.5;
-bw = range2bw(range_res,c);
+bw = rangeres2bw(range_res,c);
 sweep_slope = bw/tm;
 
 %the beat frequency corresponding to the maximum range is given by
