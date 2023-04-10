@@ -29,6 +29,11 @@ range_res = 0.5;
 bw = rangeres2bw(range_res,c);
 sweep_slope = bw/tm;
 
+% FMCW的发射波形具有非常大的带宽，如果单纯的根据奈奎斯特采样定理，那我们的AD器件的
+% 性能要求实在是太高了，这不是扯淡嘛！开玩笑这器件要多贵？为了解决这个问题，我们
+% 采集到的信号实际上是拍频信号，这样子我们就可以选择较低的采样率，那么采样率选择什么的样的参数合适呢？实际上我们需要考虑：
+% 1.复杂情况下采样率可以设置的与带宽相同
+% 2.FMCW的距离估计实际上是拍频信号，因此我们只需要知道最大距离下的拍频和最大多普勒频率的和的两倍（奈奎斯特采样定理）即可
 %the beat frequency corresponding to the maximum range is given by
 fr_max = range2beat(range_max,sweep_slope,c);
 
