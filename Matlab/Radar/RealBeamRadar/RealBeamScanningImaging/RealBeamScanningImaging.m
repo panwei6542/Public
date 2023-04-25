@@ -331,40 +331,40 @@ ResultDisplayRaw('EndProcessDataReal.dat','EndProcessDataImag.dat',[FolderImageO
 
 %% 由于y数组大小为NrNew个，需要进行插值到CpiNum+CpiNum-1大小
 % 
-% % X0 =18.5:0.25:58;
-% X0 = linspace(18.5,58,401);
-% YY = zeros(Mnum,NrNew);
-% X01 = 18.5:(39.5/(Mnum-1)):58;
-% for k =1:NrNew
-%     YY(:,k) = interp1(X0,Y(k,:),X01,'linear');
-% end
-% 
-% %%  迭代计算2
-% m =3;%迭代次数;
-% q = 3;
-% XX = zeros(NrNew,CpiNum);
-% for k =1:NrNew
-%     k
-%     sigma = Y(k,:)';
-%     %% 迭代计算
-%     for j =1: m  
-%         fenmu = F1A*sigma;
-%         fenshi1 =(YY(:,k)./fenmu);
-%         fenshi =(F1A')*fenshi1;
-%         sigma_end =sigma.*((fenshi).^q);
-%         sigma = sigma_end;
-%     end   
-%     XX(k,:) = (sigma_end);
-% end
-% 
-% 
-% %%
-% figure;
-% imagesc(xaxis,yaxis,abs(XX)),colormap gray;
-% 
-% title ('实波束基于最大似然准则超分辨算法仿真数据仿真图');
-% xlabel('方位角 X(°)');
-% ylabel('距离向 Y(m)');
-% fclose all;
+% X0 =18.5:0.25:58;
+X0 = linspace(18.5,58,401);
+YY = zeros(Mnum,NrNew);
+X01 = 18.5:(39.5/(Mnum-1)):58;
+for k =1:NrNew
+    YY(:,k) = interp1(X0,Y(k,:),X01,'linear');
+end
+
+%%  迭代计算2
+m =3;%迭代次数;
+q = 3;
+XX = zeros(NrNew,CpiNum);
+for k =1:NrNew
+    k
+    sigma = Y(k,:)';
+    %% 迭代计算
+    for j =1: m  
+        fenmu = F1A*sigma;
+        fenshi1 =(YY(:,k)./fenmu);
+        fenshi =(F1A')*fenshi1;
+        sigma_end =sigma.*((fenshi).^q);
+        sigma = sigma_end;
+    end   
+    XX(k,:) = (sigma_end);
+end
+
+
+%%
+figure;
+imagesc(xaxis,yaxis,abs(XX)),colormap gray;
+
+title ('实波束基于最大似然准则超分辨算法仿真数据仿真图');
+xlabel('方位角 X(°)');
+ylabel('距离向 Y(m)');
+fclose all;
 
 % 
